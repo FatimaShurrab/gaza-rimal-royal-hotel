@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>اتصل بنا | Gaza Rimal Royal Hotel</title>
+    
+    <!-- خطوط عربية كلاسيكية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS (التنسيقات كاملة) -->
+    <style>
+        :root {
+            --primary-navy: #1B263B;    /* كحلي ملكي */
+            --accent-gold: #C5A059;     /* ذهبي مطفي */
+            --gold-hover: #A88442;
+            --bg-ivory: #FAFAFA;        /* أبيض عاجي */
+            --text-dark: #2B2B2B;       /* رمادي داكن ناعم */
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Amiri', serif;
+            background-color: var(--bg-ivory);
+            color: var(--text-dark);
+            direction: rtl;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* الهيدر وقائمة التنقل */
+        header {
+            background-color: var(--primary-navy);
+            border-bottom: 3px solid var(--accent-gold);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            font-family: 'Aref Ruqaa', serif;
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-gold);
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        /* بنر الصفحة */
+        .page-banner {
+            background: linear-gradient(rgba(27, 38, 59, 0.85), rgba(27, 38, 59, 0.85)), 
+                        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            padding: 60px 20px;
+            text-align: center;
+            color: #FFFFFF;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .page-banner h1 {
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+
+        /* الحاوية الرئيسية */
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        /* كرت المعلومات */
+        .contact-info {
+            background-color: var(--card-bg);
+            border: 1px solid var(--accent-gold);
+            padding: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-info h3 {
+            font-family: 'Aref Ruqaa', serif;
+            color: var(--primary-navy);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 8px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .info-icon {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+        }
+
+        .info-text h4 {
+            color: var(--primary-navy);
+            font-size: 1.1rem;
+        }
+
+        .info-text p {
+            color: #555;
+            font-size: 0.95rem;
+        }
+
+        /* نموذج الرسائل */
+        .contact-form-box {
+            background-color: var(--card-bg);
+            border: 1px solid var(--accent-gold);
+            padding: 35px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .contact-form-box h3 {
+            font-family: 'Aref Ruqaa', serif;
+            color: var(--primary-navy);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--accent-gold);
+            padding-bottom: 8px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            color: var(--primary-navy);
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group textarea {
+            padding: 10px;
+            border: 1px solid #CCC;
+            border-radius: 3px;
+            font-family: inherit;
+        }
+
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--gold-hover);
+        }
+
+        /* الفوتر */
+        footer {
+            background-color: var(--primary-navy);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 2px solid var(--accent-gold);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .page-banner h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. الهيدر وقائمة التنقل -->
+    <header>
+        <a href="index.html" class="logo">Gaza Rimal Royal Hotel</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">عن الفندق</a></li>
+                <li><a href="rooms.html">الغرف</a></li>
+                <li><a href="booking.html">الحجز</a></li>
+                <li><a href="dining.html">المطعم</a></li>
+                <li><a href="amenities.html">المرافق</a></li>
+                <li><a href="offers.html">العروض</a></li>
+                <li><a href="gallery.html">المعرض</a></li>
+                <li><a href="reviews.html">الآراء</a></li>
+                <li><a href="contact.html" class="active">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 2. بنر الصفحة -->
+    <section class="page-banner">
+        <h1>تواصل معنا</h1>
+        <p>يسعدنا الإجابة على كافة استفساراتكم وتقديم الدعم اللازم على مدار الساعة</p>
+    </section>
+
+    <!-- 3. المحتوى الرئيسي -->
+    <main class="container">
+
+        <div class="contact-grid">
+
+            <!-- معلومات التواصل -->
+            <div class="contact-info">
+                <h3>معلومات العنوان والاتصال</h3>
+
+                <div class="info-item">
+                    <div class="info-icon">📍</div>
+                    <div class="info-text">
+                        <h4>الموقع</h4>
+                        <p>قطاع غزة - حي الرمال</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">📞</div>
+                    <div class="info-text">
+                        <h4>الهاتف / الواتساب</h4>
+                        <p>+970 8 2812345/ +970 59 9123456</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">✉️</div>
+                    <div class="info-text">
+                        <h4>البريد الإلكتروني</h4>
+                        <p>info@gazarimalroyal.ps</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <div class="info-icon">🕒</div>
+                    <div class="info-text">
+                        <h4>ساعات الاستقبال</h4>
+                        <p>مكتب الاستقبال يخدمكم على مدار 24 ساعة طوال أيام الأسبوع</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- نموذج إرسال الرسائل -->
+            <div class="contact-form-box">
+                <h3>أرسل لنا رسالة</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="senderName">الاسم الكامل</label>
+                        <input type="text" id="senderName" placeholder="أدخل اسمك" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="senderPhone">رقم التواصل</label>
+                        <input type="tel" id="senderPhone" placeholder="059xxxxxxx" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">موضوع الرسالة</label>
+                        <input type="text" id="subject" placeholder="عنوان الاستفسار" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">الرسالة</label>
+                        <textarea id="message" rows="4" placeholder="اكتب رسالتك أو استفسارك هنا..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-gold">إرسال الرسالة</button>
+                </form>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- 4. الفوتر -->
+    <footer>
+        <p>&copy; 2026 Gaza Rimal Royal Hotel - فندق الرمال الملكي. جميع الحقوق محفوظة.</p>
+        <p style="margin-top: 5px; font-size: 0.85rem; color: var(--accent-gold);">غزة - حي الرمال</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const contactForm = document.getElementById('contactForm');
+
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const name = document.getElementById('senderName').value;
+
+                alert(`شكراً لك أ/ ${name}!\nتم استلام رسالتك بنجاح. سيقوم فريق الاستقبال بالتواصل معك في أقرب وقت.`);
+                contactForm.reset();
+            });
+        });
+    </script>
+</body>
+</html>

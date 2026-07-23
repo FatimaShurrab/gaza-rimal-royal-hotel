@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>عن الفندق | Gaza Rimal Royal Hotel</title>
+    
+    <!-- خطوط عربية كلاسيكية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS (التنسيقات كاملة) -->
+    <style>
+        :root {
+            --primary-navy: #1B263B;    /* كحلي ملكي */
+            --accent-gold: #C5A059;     /* ذهبي مطفي */
+            --gold-hover: #A88442;
+            --bg-ivory: #FAFAFA;        /* أبيض عاجي */
+            --text-dark: #2B2B2B;       /* رمادي داكن ناعم */
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Amiri', serif;
+            background-color: var(--bg-ivory);
+            color: var(--text-dark);
+            direction: rtl;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* الهيدر وقائمة التنقل */
+        header {
+            background-color: var(--primary-navy);
+            border-bottom: 3px solid var(--accent-gold);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            font-family: 'Aref Ruqaa', serif;
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-gold);
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        /* عنوان الصفحة الفرعية */
+        .page-banner {
+            background: linear-gradient(rgba(27, 38, 59, 0.85), rgba(27, 38, 59, 0.85)), 
+                        url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            padding: 60px 20px;
+            text-align: center;
+            color: #FFFFFF;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .page-banner h1 {
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+
+        /* الحاوية العامة */
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        /* أجزاء المحتوى */
+        .story-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 60px;
+        }
+
+        .story-text h2 {
+            font-family: 'Aref Ruqaa', serif;
+            color: var(--primary-navy);
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            border-right: 4px solid var(--accent-gold);
+            padding-right: 12px;
+        }
+
+        .story-text p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+
+        .story-img img {
+            width: 100%;
+            border-radius: 4px;
+            border: 2px solid var(--accent-gold);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        /* القيم والمبادئ */
+        .values-section {
+            background-color: var(--card-bg);
+            border: 1px solid var(--accent-gold);
+            padding: 40px;
+            margin: 50px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .value-card {
+            border-right: 2px solid var(--accent-gold);
+            padding-right: 15px;
+        }
+
+        .value-card h3 {
+            color: var(--primary-navy);
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+
+        /* زر الدعوة للحجز */
+        .cta-banner {
+            text-align: center;
+            background-color: var(--primary-navy);
+            color: #FFFFFF;
+            padding: 40px 20px;
+            margin-top: 50px;
+            border-top: 3px solid var(--accent-gold);
+        }
+
+        .cta-banner h2 {
+            font-family: 'Aref Ruqaa', serif;
+            color: var(--accent-gold);
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--gold-hover);
+        }
+
+        /* الفوتر */
+        footer {
+            background-color: var(--primary-navy);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 2px solid var(--accent-gold);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .page-banner h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. الهيدر وقائمة التنقل -->
+    <header>
+        <a href="index.html" class="logo">Gaza Rimal Royal Hotel</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html" class="active">عن الفندق</a></li>
+                <li><a href="rooms.html">الغرف</a></li>
+                <li><a href="booking.html">الحجز</a></li>
+                <li><a href="dining.html">المطعم</a></li>
+                <li><a href="amenities.html">المرافق</a></li>
+                <li><a href="offers.html">العروض</a></li>
+                <li><a href="gallery.html">المعرض</a></li>
+                <li><a href="reviews.html">الآراء</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 2. بنر الصفحة -->
+    <section class="page-banner">
+        <h1>عن فندق الرمال الملكي</h1>
+        <p>حكاية أصالة وضيافة كلاسيكية في أرقى أحياء غزة</p>
+    </section>
+
+    <!-- 3. قصة الفندق وموقعه -->
+    <main class="container">
+        <div class="story-grid">
+            <div class="story-text">
+                <h2>أصالة الموقع ورقي الضيافة</h2>
+                <p>تأسس **فندق الرمال الملكي (Gaza Rimal Royal Hotel)** ليكون ملاذاً فاخراً يجمع بين الطراز المعماري الكلاسيكي الخالد ودفء الضيافة الأصيلة. يقع الفندق في قلب حي الرمال الذي يعد الحاضرة الراقية ومركز الحركة الثقافية والتجارية بمدينة غزة.</p>
+                <p>حرصنا في تصميم كل ركن من أركان الفندق على استخدام خطوط الديكور الكلاسيكي باللونين الكحلي الملكي والذهبي الدافئ، لنوفر لنزلائنا بيئة يسودها الهدوء والانعزال عن صخب المدينة مع الحفاظ على القرب من أركانها الحيوية.</p>
+            </div>
+            <div class="story-img">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80" alt="مدخل الفندق الفاخر">
+            </div>
+        </div>
+
+        <!-- 4. قيم الفندق ورؤيته -->
+        <section class="values-section">
+            <h2 style="font-family: 'Aref Ruqaa', serif; color: var(--primary-navy); text-align: center; font-size: 2rem;">رؤيتنا وقيمنا</h2>
+            <div class="values-grid">
+                <div class="value-card">
+                    <h3>الضيافة الرفيعة</h3>
+                    <p>تقديم أعلى مستويات الخدمة الشخصية لكل نزيل مع الاهتمام بأدق التفاصيل لضمان إقامة مريحة.</p>
+                </div>
+                <div class="value-card">
+                    <h3>الهدوء والخصوصية</h3>
+                    <p>توفير بيئة هادئة وآمنة تضمن التام للنزلاء سواء كانوا في رحلة عمل أو استرخاء عائلي.</p>
+                </div>
+                <div class="value-card">
+                    <h3>الجودة والتفاصيل</h3>
+                    <p>العناية بكل عنصر من عناصر الغرف والمرافق لتعكس الفخامة الكلاسيكية التي نلتزم بها.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 5. دعوة للحجز -->
+    <div class="cta-banner">
+        <h2>هل أنت جاهز لتجربة إقامة لا تُنسى؟</h2>
+        <p>استمتع بالراحة والأناقة في قلب حي الرمال</p>
+        <a href="booking.html" class="btn-gold">احجز إقامتك الآن</a>
+    </div>
+
+    <!-- 6. الفوتر -->
+    <footer>
+        <p>&copy; 2026 Gaza Rimal Royal Hotel - فندق الرمال الملكي. جميع الحقوق محفوظة.</p>
+        <p style="margin-top: 5px; font-size: 0.85rem; color: var(--accent-gold);">غزة - حي الرمال</p>
+    </footer>
+
+    <!-- JavaScript (لتأكيد تفاعلية التنقل) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("صفحة 'عن الفندق' جاهزة.");
+        });
+    </script>
+</body>
+</html>

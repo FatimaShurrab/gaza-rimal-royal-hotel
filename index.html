@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gaza Rimal Royal Hotel | فندق الرمال الملكي</title>
+    
+    <!-- خطوط عربية كلاسيكية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS (تنسيقات الصفحة الرئيسية كاملة) -->
+    <style>
+        :root {
+            --primary-navy: #1B263B;    /* كحلي ملكي */
+            --accent-gold: #C5A059;     /* ذهبي مطفي */
+            --gold-hover: #A88442;
+            --bg-ivory: #FAFAFA;        /* أبيض عاجي */
+            --text-dark: #2B2B2B;       /* رمادي داكن ناعم */
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Amiri', serif;
+            background-color: var(--bg-ivory);
+            color: var(--text-dark);
+            direction: rtl;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* الهيدر وقائمة التنقل */
+        header {
+            background-color: var(--primary-navy);
+            border-bottom: 3px solid var(--accent-gold);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            font-family: 'Aref Ruqaa', serif;
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-gold);
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        /* القسم الرئيسي (Hero Section) */
+        .hero {
+            background: linear-gradient(rgba(27, 38, 59, 0.75), rgba(27, 38, 59, 0.75)), 
+                        url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #FFFFFF;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 3.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin-bottom: 30px;
+        }
+
+        /* شريط الحجز السريع */
+        .quick-booking {
+            background-color: var(--card-bg);
+            max-width: 1000px;
+            margin: -50px auto 60px auto;
+            padding: 25px 30px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid var(--accent-gold);
+            position: relative;
+            z-index: 10;
+        }
+
+        .booking-form {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+            align-items: end;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--primary-navy);
+            margin-bottom: 8px;
+        }
+
+        .form-group input, .form-group select {
+            padding: 10px;
+            border: 1px solid #CCC;
+            border-radius: 3px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            outline: none;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            border-color: var(--accent-gold);
+        }
+
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1.1rem;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--gold-hover);
+        }
+
+        /* الحاويات والعناوين */
+        .container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            text-align: center;
+            color: var(--primary-navy);
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
+        /* قسم "عن الفندق" */
+        .about-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: var(--primary-navy);
+            margin-bottom: 15px;
+            border-right: 4px solid var(--accent-gold);
+            padding-right: 10px;
+        }
+
+        .about-img img {
+            width: 100%;
+            border-radius: 4px;
+            border: 2px solid var(--accent-gold);
+        }
+
+        /* شبكة كروت الغرف */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--accent-gold);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 20px;
+        }
+
+        .card-title {
+            color: var(--primary-navy);
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+
+        .card-price {
+            color: var(--accent-gold);
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin: 15px 0;
+        }
+
+        /* المميزات والمرافق */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            text-align: center;
+            background-color: var(--primary-navy);
+            color: #FFFFFF;
+            padding: 40px 20px;
+            margin-top: 60px;
+            border-top: 3px solid var(--accent-gold);
+            border-bottom: 3px solid var(--accent-gold);
+        }
+
+        .feature-item h4 {
+            color: var(--accent-gold);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        /* الفوتر */
+        footer {
+            background-color: var(--primary-navy);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 2px solid var(--accent-gold);
+        }
+
+        footer p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        /* Responsive للموبايل */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .quick-booking {
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. الهيدر وقائمة التنقل للصفحات الـ 10 -->
+    <header>
+        <a href="index.html" class="logo">Gaza Rimal Royal Hotel</a>
+        <nav>
+            <ul>
+                <li><a href="index.html" class="active">الرئيسية</a></li>
+                <li><a href="about.html">عن الفندق</a></li>
+                <li><a href="rooms.html">الغرف</a></li>
+                <li><a href="booking.html">الحجز</a></li>
+                <li><a href="dining.html">المطعم</a></li>
+                <li><a href="amenities.html">المرافق</a></li>
+                <li><a href="offers.html">العروض</a></li>
+                <li><a href="gallery.html">المعرض</a></li>
+                <li><a href="reviews.html">الآراء</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 2. الواجهة الرئيسية (Hero Section) -->
+    <section class="hero">
+        <h1>فندق الرمال الملكي</h1>
+        <p>أصالة الضيافة الكلاسيكية والفخامة الرفيعة في أرقى أحياء مدينة غزة</p>
+        <a href="booking.html" class="btn-gold">احجز إقامتك الآن</a>
+    </section>
+
+    <!-- 3. نموذج الحجز السريع التفاعلي -->
+    <div class="quick-booking">
+        <form id="quickBookingForm" class="booking-form">
+            <div class="form-group">
+                <label for="checkIn">تاريخ الوصول</label>
+                <input type="date" id="checkIn" required>
+            </div>
+            <div class="form-group">
+                <label for="checkOut">تاريخ المغادرة</label>
+                <input type="date" id="checkOut" required>
+            </div>
+            <div class="form-group">
+                <label for="roomType">نوع الغرفة</label>
+                <select id="roomType">
+                    <option value="جناح الرمال الملكي">جناح الرمال الملكي</option>
+                    <option value="غرفة ديلوكس مزدوجة">غرفة ديلوكس مزدوجة</option>
+                    <option value="الجناح العائلي">الجناح العائلي</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn-gold">البحث عن التوافر</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- 4. قسم "عن الفندق" (About Section) -->
+    <section class="container">
+        <div class="about-section">
+            <div class="about-text">
+                <h3>فخامة الإقامة في قلب حي الرمال</h3>
+                <p>يتميز **فندق الرمال الملكي** بموقعه الاستثنائي في حي الرمال بمدينة غزة. يجمع الفندق بين الطراز المعماري الكلاسيكي والخدمات الحديثة الرفيعة ليوفر لنزلائه تجربة هادئة ومريحة لا تُنسى.</p>
+                <p style="margin-top: 10px;">سواء كنت في رحلة عمل أو تبحث عن استراحة فاخرة مع العائلة، فإن ضيافتنا الكلاسيكية مصممة لتلبية كافة تطلعاتكم.</p>
+                <br>
+                <a href="about.html" class="btn-gold">اقرأ المزيد عنا</a>
+            </div>
+            <div class="about-img">
+                <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80" alt="فندق الرمال الملكي">
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. قسم الغرف الأبرز (Featured Rooms) -->
+    <section class="container">
+        <h2 class="section-title">الأجنحة والغرف المتاحة</h2>
+        <p class="section-subtitle">اختر المساحة التي تناسب ذوقك من تشكيلتنا الفاخرة</p>
+
+        <div class="cards-grid">
+            <!-- غرفة 1 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=600&q=80" alt="جناح الرمال الملكي" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">جناح الرمال الملكي</h3>
+                    <p>جناح فاخر بمساحة واسعة، أثاث كلاسيكي، وصالة استقبال خاصة ذات طابع ملوكياً.</p>
+                    <div class="card-price">ابتداءً من $180 / الليلة</div>
+                    <a href="booking.html" class="btn-gold" style="width: 100%;">احجز الآن</a>
+                </div>
+            </div>
+
+            <!-- غرفة 2 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&q=80" alt="غرفة ديلوكس مزدوجة" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">غرفة ديلوكس مزدوجة</h3>
+                    <p>غرفة بألوان هادئة ومريحة للأعصاب، مجهزة بسرير كينج ومكتب عمل فاخر.</p>
+                    <div class="card-price">ابتداءً من $110 / الليلة</div>
+                    <a href="booking.html" class="btn-gold" style="width: 100%;">احجز الآن</a>
+                </div>
+            </div>
+
+            <!-- غرفة 3 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=600&q=80" alt="الجناح العائلي" class="card-img">
+                <div class="card-body">
+                    <h3 class="card-title">الجناح العائلي الفاخر</h3>
+                    <p>أجنحة متصلة ومصممة بعناية لتوفر للعائلة الخصوصية والأمان مع كافة أساليب الراحة.</p>
+                    <div class="card-price">ابتداءً من $220 / الليلة</div>
+                    <a href="booking.html" class="btn-gold" style="width: 100%;">احجز الآن</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. شريط مميزات الفندق (Features Strip) -->
+    <div class="features-grid">
+        <div class="feature-item">
+            <h4>موقع متميز</h4>
+            <p>في قلب حي الرمال الراقي</p>
+        </div>
+        <div class="feature-item">
+            <h4>خدمة الغرف 24/7</h4>
+            <p>فريق جاهز لخدمتكم دائماً</p>
+        </div>
+        <div class="feature-item">
+            <h4>مطعم فاخر</h4>
+            <p>أشهى المأكولات الشرقية والعالمية</p>
+        </div>
+        <div class="feature-item">
+            <h4>هدوء وخصوصية</h4>
+            <p>تصميم مخصص للراحة والأنقاة</p>
+        </div>
+    </div>
+
+    <!-- 7. الفوتر (Footer) -->
+    <footer>
+        <p>&copy; 2026 Gaza Rimal Royal Hotel - فندق الرمال الملكي. جميع الحقوق محفوظة.</p>
+        <p style="margin-top: 5px; font-size: 0.85rem; color: var(--accent-gold);">غزة - حي الرمال</p>
+    </footer>
+
+    <!-- JavaScript (البرمجة التفاعلية كاملة) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('quickBookingForm');
+
+            // ضبط الحد الأدنى للتواريخ ليكون من اليوم
+            const today = new Date().toISOString().split('T')[0];
+            const checkInInput = document.getElementById('checkIn');
+            const checkOutInput = document.getElementById('checkOut');
+
+            if(checkInInput && checkOutInput) {
+                checkInInput.min = today;
+                checkOutInput.min = today;
+
+                checkInInput.addEventListener('change', () => {
+                    checkOutInput.min = checkInInput.value;
+                });
+            }
+
+            // التعامل مع إرسال نموذج الحجز السريع
+            if (form) {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+
+                    const checkIn = checkInInput.value;
+                    const checkOut = checkOutInput.value;
+                    const roomType = document.getElementById('roomType').value;
+
+                    if (!checkIn || !checkOut) {
+                        alert('يرجى تحديد تواريخ الوصول والمغادرة.');
+                        return;
+                    }
+
+                    // التوجيه إلى صفحة الحجز الكاملة مع إرسال البيانات كـ URL parameters
+                    const bookingUrl = `booking.html?checkIn=${encodeURIComponent(checkIn)}&checkOut=${encodeURIComponent(checkOut)}&room=${encodeURIComponent(roomType)}`;
+                    window.location.href = bookingUrl;
+                });
+            }
+        });
+    </script>
+</body>
+</html>

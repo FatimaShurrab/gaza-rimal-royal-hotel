@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>الغرف والأجنحة | Gaza Rimal Royal Hotel</title>
+    
+    <!-- خطوط عربية كلاسيكية -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- CSS (التنسيقات كاملة) -->
+    <style>
+        :root {
+            --primary-navy: #1B263B;    /* كحلي ملكي */
+            --accent-gold: #C5A059;     /* ذهبي مطفي */
+            --gold-hover: #A88442;
+            --bg-ivory: #FAFAFA;        /* أبيض عاجي */
+            --text-dark: #2B2B2B;       /* رمادي داكن ناعم */
+            --card-bg: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Amiri', serif;
+            background-color: var(--bg-ivory);
+            color: var(--text-dark);
+            direction: rtl;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* الهيدر وقائمة التنقل */
+        header {
+            background-color: var(--primary-navy);
+            border-bottom: 3px solid var(--accent-gold);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            font-family: 'Aref Ruqaa', serif;
+            color: var(--accent-gold);
+            font-size: 1.8rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+        }
+
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+            padding: 5px 0;
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-gold);
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        /* بنر الصفحة */
+        .page-banner {
+            background: linear-gradient(rgba(27, 38, 59, 0.85), rgba(27, 38, 59, 0.85)), 
+                        url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            padding: 60px 20px;
+            text-align: center;
+            color: #FFFFFF;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .page-banner h1 {
+            font-family: 'Aref Ruqaa', serif;
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 10px;
+        }
+
+        /* الحاوية وقائمة الغرف */
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .room-item {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            background: var(--card-bg);
+            border: 1px solid var(--accent-gold);
+            margin-bottom: 40px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .room-img img {
+            width: 100%;
+            height: 100%;
+            min-height: 280px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .room-details {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .room-title {
+            font-family: 'Aref Ruqaa', serif;
+            color: var(--primary-navy);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .room-features {
+            list-style: none;
+            margin: 15px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .room-features li {
+            background: #F0F4F8;
+            padding: 5px 12px;
+            border-radius: 3px;
+            font-size: 0.9rem;
+            color: var(--primary-navy);
+            border-right: 3px solid var(--accent-gold);
+        }
+
+        .room-price {
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1rem;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            align-self: start;
+        }
+
+        .btn-gold:hover {
+            background-color: var(--gold-hover);
+        }
+
+        /* الفوتر */
+        footer {
+            background-color: var(--primary-navy);
+            color: #FFFFFF;
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 2px solid var(--accent-gold);
+        }
+
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .page-banner h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. الهيدر وقائمة التنقل -->
+    <header>
+        <a href="index.html" class="logo">Gaza Rimal Royal Hotel</a>
+        <nav>
+            <ul>
+                <li><a href="index.html">الرئيسية</a></li>
+                <li><a href="about.html">عن الفندق</a></li>
+                <li><a href="rooms.html" class="active">الغرف</a></li>
+                <li><a href="booking.html">الحجز</a></li>
+                <li><a href="dining.html">المطعم</a></li>
+                <li><a href="amenities.html">المرافق</a></li>
+                <li><a href="offers.html">العروض</a></li>
+                <li><a href="gallery.html">المعرض</a></li>
+                <li><a href="reviews.html">الآراء</a></li>
+                <li><a href="contact.html">اتصل بنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- 2. بنر الصفحة -->
+    <section class="page-banner">
+        <h1>الغرف والأجنحة</h1>
+        <p>تجارب إقامة كلاسيكية فاخرة تناسب كافة تطلعاتكم في حي الرمال</p>
+    </section>
+
+    <!-- 3. قائمة الغرف التفصيلية -->
+    <main class="container">
+
+        <!-- الغرفة 1 -->
+        <div class="room-item">
+            <div class="room-img">
+                <img src="https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80" alt="جناح الرمال الملكي">
+            </div>
+            <div class="room-details">
+                <h2 class="room-title">جناح الرمال الملكي</h2>
+                <p>قمة الفخامة والأناقة، يمتد الجناح على مساحة واسعة تشمل صالة استقبال منفصلة بأثاث كلاسيكي فاخر، مع إطلالة ممتازة ومكتب عمل خاص.</p>
+                <ul class="room-features">
+                    <li>سرير كينج فاخر</li>
+                    <li>صالة استقبال</li>
+                    <li>إنترنت سريع</li>
+                    <li>خدمة غرف 24/7</li>
+                </ul>
+                <div class="room-price">ابتداءً من $180 / الليلة</div>
+                <a href="booking.html?room=RoyalSuite" class="btn-gold">احجز هذا الجناح</a>
+            </div>
+        </div>
+
+        <!-- الغرفة 2 -->
+        <div class="room-item">
+            <div class="room-img">
+                <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80" alt="غرفة ديلوكس مزدوجة">
+            </div>
+            <div class="room-details">
+                <h2 class="room-title">غرفة ديلوكس مزدوجة</h2>
+                <p>تصميم متناسق بألوان هادئة يوفر بيئة استرخاء مثالية. خيار ممتاز لرجال الأعمال والمسافرين الباحثين عن الهدوء والعمل بمرونة.</p>
+                <ul class="room-features">
+                    <li>سرير كينج أو سريرين</li>
+                    <li>شاشة ذكية</li>
+                    <li>مكيف هواء</li>
+                    <li>آلة صنع القهوة</li>
+                </ul>
+                <div class="room-price">ابتداءً من $110 / الليلة</div>
+                <a href="booking.html?room=DeluxeDouble" class="btn-gold">احجز هذه الغرفة</a>
+            </div>
+        </div>
+
+        <!-- الغرفة 3 -->
+        <div class="room-item">
+            <div class="room-img">
+                <img src="https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&w=800&q=80" alt="الجناح العائلي الفاخر">
+            </div>
+            <div class="room-details">
+                <h2 class="room-title">الجناح العائلي الفاخر</h2>
+                <p>مساحة متكاملة مخصصة للعائلات، تتضمن غرفتين متصلتين مع حمامات خاصة وتجهيزات تضمن الراحة والأمان التام لكافة أفراد العائلة.</p>
+                <ul class="room-features">
+                    <li>غرفتان متصلتان</li>
+                    <li>2 حمام فاخر</li>
+                    <li>ميني بار</li>
+                    <li>إطلالة هادئة</li>
+                </ul>
+                <div class="room-price">ابتداءً من $220 / الليلة</div>
+                <a href="booking.html?room=FamilySuite" class="btn-gold">احجز الجناح العائلي</a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- 4. الفوتر -->
+    <footer>
+        <p>&copy; 2026 Gaza Rimal Royal Hotel - فندق الرمال الملكي. جميع الحقوق محفوظة.</p>
+        <p style="margin-top: 5px; font-size: 0.85rem; color: var(--accent-gold);">غزة - حي الرمال</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("صفحة ' الغرف والأجنحة' جاهزة.");
+        });
+    </script>
+</body>
+</html>
